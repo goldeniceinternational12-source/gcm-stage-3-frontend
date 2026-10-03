@@ -1,0 +1,230 @@
+.academic-history-page {
+    min-height: 100vh;
+    padding: 40px;
+    background: #eee9dc;
+    color: #07111f;
+}
+
+.history-header {
+    margin-bottom: 30px;
+}
+
+.history-header span {
+    color: #9a6e17;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.history-header h1 {
+    margin: 7px 0 8px;
+
+    color: #07111f;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.history-header p {
+    margin: 0;
+
+    color: #4f5968;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.history-list {
+    display: grid;
+    gap: 15px;
+    max-width: 1050px;
+}
+
+.history-card {
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #cec5b4;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(7, 17, 31, 0.06);
+}
+
+.history-card.current {
+    border-color: #b88724;
+
+    box-shadow:
+        0 8px 25px
+        rgba(184, 135, 36, 0.12);
+}
+
+.history-card-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid #ddd6c9;
+}
+
+.history-year {
+    color: #9a6e17;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.history-card h2 {
+    margin: 7px 0 0;
+
+    color: #07111f;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 26px;
+
+    font-weight: 700;
+}
+
+.history-status {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+.history-status.active {
+    background: #e8f4ec;
+    color: #246746;
+}
+
+.history-status.completed {
+    background: #eeeae1;
+    color: #4f5968;
+}
+
+.history-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    padding-top: 20px;
+}
+
+.history-details div {
+    min-width: 0;
+}
+
+.history-details span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #8a6a2a;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+.history-details strong {
+    display: block;
+
+    color: #07111f;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+.history-message {
+    max-width: 700px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #cec5b4;
+
+    border-radius: 9px;
+
+    color: #3e4858;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.history-error {
+    border-color: #d5aaaa;
+    color: #8d3d3d;
+    background: #fff8f8;
+}
+
+@media (max-width: 800px) {
+    .academic-history-page {
+        padding: 25px;
+    }
+
+    .history-header h1 {
+        font-size: 34px;
+    }
+
+    .history-details {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .academic-history-page {
+        padding: 18px;
+    }
+
+    .history-card {
+        padding: 20px;
+    }
+
+    .history-card-top {
+        flex-direction: column;
+    }
+
+    .history-details {
+        grid-template-columns: 1fr;
+    }
+}

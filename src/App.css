@@ -1,0 +1,768 @@
+/* =========================================================
+   GCM ACADEMIC PORTAL
+   PREMIUM WELCOME PAGE
+   ========================================================= */
+
+:root {
+  --gcm-navy: #070c1b;
+  --gcm-navy-light: #0c142b;
+  --gcm-navy-card: rgba(15, 24, 49, 0.78);
+
+  --gcm-gold: #c9a24b;
+  --gcm-gold-light: #f0d78c;
+  --gcm-gold-soft: rgba(201, 162, 75, 0.18);
+
+  --gcm-ivory: #f5efe0;
+  --gcm-text: #d9d5ca;
+  --gcm-muted: #9298a8;
+
+  --gcm-border: rgba(201, 162, 75, 0.25);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--gcm-navy);
+  color: var(--gcm-ivory);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.welcome-page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 24px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(201, 162, 75, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(37, 63, 126, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(201, 162, 75, 0.06),
+      transparent 30%
+    ),
+    var(--gcm-navy);
+}
+
+
+/* =========================================================
+   DECORATIVE RAYS
+   ========================================================= */
+
+.welcome-rays {
+  position: absolute;
+  inset: -50%;
+
+  pointer-events: none;
+
+  opacity: 0.35;
+
+  background:
+    conic-gradient(
+      from 180deg at 50% 0%,
+      transparent 0deg,
+      rgba(201, 162, 75, 0.025) 12deg,
+      transparent 25deg,
+      rgba(201, 162, 75, 0.02) 38deg,
+      transparent 52deg,
+      rgba(201, 162, 75, 0.025) 68deg,
+      transparent 82deg,
+      rgba(201, 162, 75, 0.02) 100deg,
+      transparent 120deg
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+   ========================================================= */
+
+.welcome-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+.welcome-glow-one {
+  width: 350px;
+  height: 350px;
+
+  top: -180px;
+  left: -150px;
+
+  background: rgba(201, 162, 75, 0.08);
+}
+
+.welcome-glow-two {
+  width: 400px;
+  height: 400px;
+
+  right: -200px;
+  bottom: -200px;
+
+  background: rgba(49, 74, 145, 0.13);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.welcome-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.welcome-logo-wrapper {
+  width: 116px;
+  height: 116px;
+
+  margin: 0 auto 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--gcm-border);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 162, 75, 0.09),
+      rgba(7, 12, 27, 0.8)
+    );
+
+  box-shadow:
+    0 0 0 8px rgba(201, 162, 75, 0.025),
+    0 0 45px rgba(201, 162, 75, 0.12),
+    inset 0 0 30px rgba(201, 162, 75, 0.05);
+}
+
+.welcome-logo {
+  width: 82px;
+  height: 82px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.welcome-heading {
+  max-width: 760px;
+
+  margin: 0 auto 50px;
+}
+
+.welcome-eyebrow {
+  margin: 0 0 12px;
+
+  color: var(--gcm-gold-light);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  line-height: 1.6;
+}
+
+.welcome-heading h1 {
+  margin: 0;
+
+  color: var(--gcm-ivory);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(44px, 7vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+
+  text-transform: none;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.welcome-divider {
+  width: 100%;
+
+  max-width: 400px;
+
+  margin: 25px auto 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.welcome-divider span {
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(201, 162, 75, 0.55)
+    );
+}
+
+.welcome-divider span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      rgba(201, 162, 75, 0.55)
+    );
+}
+
+.welcome-divider strong {
+  color: var(--gcm-gold);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.welcome-description {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: var(--gcm-muted);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PORTAL OPTIONS
+   ========================================================= */
+
+.portal-options {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   PORTAL CARD
+   ========================================================= */
+
+.portal-card {
+  position: relative;
+
+  display: flex;
+
+  gap: 22px;
+
+  min-height: 330px;
+
+  padding: 32px;
+
+  border: 1px solid rgba(201, 162, 75, 0.16);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 30, 58, 0.86),
+      rgba(9, 15, 32, 0.88)
+    );
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  backdrop-filter: blur(15px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.portal-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 32px;
+  right: 32px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 162, 75, 0.5),
+      transparent
+    );
+
+  opacity: 0.5;
+}
+
+.portal-card:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(201, 162, 75, 0.4);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(201, 162, 75, 0.07);
+}
+
+
+/* =========================================================
+   PORTAL ICON
+   ========================================================= */
+
+.portal-icon {
+  flex: 0 0 auto;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(201, 162, 75, 0.25);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(201, 162, 75, 0.12),
+      rgba(201, 162, 75, 0.03)
+    );
+
+  color: var(--gcm-gold-light);
+
+  box-shadow:
+    inset 0 0 20px rgba(201, 162, 75, 0.04);
+}
+
+.portal-icon span {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PORTAL CONTENT
+   ========================================================= */
+
+.portal-card-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.portal-label {
+  margin: 3px 0 8px;
+
+  color: var(--gcm-gold);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.portal-card h2 {
+  margin: 0 0 12px;
+
+  color: var(--gcm-ivory);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+.portal-card-content > p:not(.portal-label) {
+  margin: 0 0 25px;
+
+  color: var(--gcm-muted);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PORTAL BUTTON
+   ========================================================= */
+
+.portal-button {
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(201, 162, 75, 0.45);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201, 162, 75, 0.14),
+      rgba(201, 201, 162, 0.03)
+    );
+
+  color: var(--gcm-gold-light);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.portal-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201, 162, 75, 0.25),
+      rgba(201, 162, 75, 0.07)
+    );
+
+  border-color:
+    rgba(201, 162, 75, 0.75);
+
+  transform: translateX(2px);
+}
+
+.portal-button:active {
+  transform: translateX(2px) scale(0.99);
+}
+
+.button-arrow {
+  color: var(--gcm-gold);
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.portal-button:hover .button-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.welcome-footer {
+  margin-top: 50px;
+
+  text-align: center;
+}
+
+.footer-line {
+  width: 80px;
+
+  height: 1px;
+
+  margin: 0 auto 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 162, 75, 0.55),
+      transparent
+    );
+}
+
+.welcome-footer p {
+  margin: 0 0 7px;
+
+  color: rgba(245, 239, 224, 0.72);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.welcome-footer span {
+  color: rgba(146, 152, 168, 0.7);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .welcome-page {
+    padding: 50px 20px;
+  }
+
+  .portal-options {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-card {
+    min-height: auto;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .welcome-page {
+    padding: 40px 16px;
+  }
+
+  .welcome-logo-wrapper {
+    width: 95px;
+    height: 95px;
+
+    margin-bottom: 22px;
+  }
+
+  .welcome-logo {
+    width: 68px;
+    height: 68px;
+  }
+
+  .welcome-heading {
+    margin-bottom: 35px;
+  }
+
+  .welcome-eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .welcome-heading h1 {
+    font-size: 46px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .welcome-divider {
+    margin-top: 20px;
+    margin-bottom: 18px;
+  }
+
+  .welcome-description {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .portal-options {
+    gap: 16px;
+  }
+
+  .portal-card {
+    display: block;
+
+    padding: 24px;
+
+    border-radius: 17px;
+  }
+
+  .portal-icon {
+    margin-bottom: 20px;
+  }
+
+  .portal-card h2 {
+    font-size: 27px;
+  }
+
+  .portal-card-content > p:not(.portal-label) {
+    font-size: 13px;
+  }
+
+  .portal-button {
+    min-height: 50px;
+  }
+
+  .welcome-footer {
+    margin-top: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .welcome-page {
+    padding: 30px 13px;
+  }
+
+  .welcome-heading h1 {
+    font-size: 39px;
+  }
+
+  .welcome-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .portal-card {
+    padding: 20px;
+  }
+
+  .portal-card h2 {
+    font-size: 24px;
+  }
+
+}

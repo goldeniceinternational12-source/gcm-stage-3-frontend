@@ -1,0 +1,450 @@
+.gcm-welcome {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(201, 162, 75, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #050914 0%,
+      #0a1024 45%,
+      #111a35 100%
+    );
+
+  color: #f5efe0;
+  padding: 40px 20px;
+}
+
+.gcm-welcome::before,
+.gcm-welcome::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.gcm-welcome::before {
+  width: 520px;
+  height: 520px;
+
+  top: -280px;
+  left: -180px;
+
+  border: 1px solid rgba(201, 162, 75, 0.14);
+
+  box-shadow:
+    0 0 80px rgba(201, 162, 75, 0.06);
+}
+
+.gcm-welcome::after {
+  width: 600px;
+  height: 600px;
+
+  right: -300px;
+  bottom: -320px;
+
+  border: 1px solid rgba(201, 162, 75, 0.12);
+}
+
+.gcm-welcome-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 9, 20, 0.55),
+      transparent 50%,
+      rgba(5, 9, 20, 0.55)
+    );
+
+  pointer-events: none;
+}
+
+.gcm-welcome-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1050px;
+
+  text-align: center;
+}
+
+.gcm-welcome-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.gcm-welcome-logo img {
+  width: 105px;
+  height: 105px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 10px 30px rgba(0, 0, 0, 0.35)
+    );
+}
+
+.gcm-welcome-label {
+  margin: 0 0 12px;
+
+  color: #c9a24b;
+
+  font-family:
+    "Marcellus",
+    Georgia,
+    serif;
+
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+}
+
+.gcm-welcome-content h1 {
+  margin: 0 auto;
+
+  max-width: 800px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(
+    3rem,
+    7vw,
+    5.8rem
+  );
+
+  line-height: 0.95;
+  font-weight: 500;
+
+  letter-spacing: -0.025em;
+}
+
+.gcm-welcome-content h1 span {
+  display: block;
+
+  color: #c9a24b;
+
+  margin-top: 8px;
+}
+
+.gcm-welcome-description {
+  max-width: 720px;
+
+  margin: 28px auto 45px;
+
+  color: rgba(245, 239, 224, 0.78);
+
+  font-family:
+    "Marcellus",
+    Georgia,
+    serif;
+
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+/* PORTAL OPTIONS */
+
+.gcm-portal-options {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gcm-portal-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 190px;
+
+  padding: 28px;
+
+  text-align: left;
+
+  color: #f5efe0;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid
+    rgba(201, 162, 75, 0.25);
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(15px);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gcm-portal-card:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(201, 162, 75, 0.75);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(201, 162, 75, 0.13),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  box-shadow:
+    0 20px 50px
+      rgba(0, 0, 0, 0.28);
+}
+
+.gcm-portal-card:active {
+  transform: translateY(-2px);
+}
+
+.gcm-portal-icon {
+  flex-shrink: 0;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 20px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(201, 162, 75, 0.12);
+
+  border: 1px solid
+    rgba(201, 162, 75, 0.3);
+
+  font-size: 1.7rem;
+}
+
+.gcm-portal-text {
+  flex: 1;
+}
+
+.gcm-portal-small {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #c9a24b;
+
+  font-family:
+    "Marcellus",
+    Georgia,
+    serif;
+
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+}
+
+.gcm-portal-text h2 {
+  margin: 0 0 8px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.gcm-portal-text p {
+  margin: 0;
+
+  max-width: 440px;
+
+  color:
+    rgba(245, 239, 224, 0.67);
+
+  font-family:
+    "Marcellus",
+    Georgia,
+    serif;
+
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.gcm-portal-arrow {
+  flex-shrink: 0;
+
+  margin-left: 18px;
+
+  color: #c9a24b;
+
+  font-size: 1.7rem;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.gcm-portal-card:hover
+.gcm-portal-arrow {
+  transform: translateX(5px);
+}
+
+/* FOOTER */
+
+.gcm-welcome-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 42px;
+
+  color:
+    rgba(245, 239, 224, 0.42);
+
+  font-family:
+    "Marcellus",
+    Georgia,
+    serif;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.08em;
+}
+
+.gcm-footer-dot {
+  color: #c9a24b;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+  .gcm-welcome {
+    padding: 50px 18px;
+  }
+
+  .gcm-welcome-content h1 {
+    font-size: clamp(
+      3rem,
+      10vw,
+      4.5rem
+    );
+  }
+
+  .gcm-portal-options {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+  }
+
+  .gcm-portal-card {
+    min-height: 170px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+  .gcm-welcome {
+    padding:
+      35px 15px;
+  }
+
+  .gcm-welcome-logo img {
+    width: 82px;
+    height: 82px;
+  }
+
+  .gcm-welcome-label {
+    font-size: 0.63rem;
+    letter-spacing: 0.19em;
+  }
+
+  .gcm-welcome-content h1 {
+    font-size: 3.15rem;
+  }
+
+  .gcm-welcome-description {
+    margin:
+      22px auto 32px;
+
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  .gcm-portal-card {
+    min-height: auto;
+
+    padding: 21px 18px;
+
+    border-radius: 16px;
+  }
+
+  .gcm-portal-icon {
+    width: 50px;
+    height: 50px;
+
+    margin-right: 13px;
+
+    border-radius: 13px;
+
+    font-size: 1.35rem;
+  }
+
+  .gcm-portal-text h2 {
+    font-size: 1.65rem;
+  }
+
+  .gcm-portal-text p {
+    font-size: 0.7rem;
+  }
+
+  .gcm-portal-arrow {
+    margin-left: 8px;
+    font-size: 1.35rem;
+  }
+
+  .gcm-welcome-footer {
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+
+    font-size: 0.6rem;
+  }
+}

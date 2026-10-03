@@ -1,0 +1,1591 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Marcellus&family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   GCM STUDENT MANAGEMENT
+   Global College of Missiology
+   ========================================================= */
+
+.student-management-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 42px;
+  background: #eee9dc;
+  color: #0a1024;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.student-management-header {
+  max-width: 1500px;
+  margin: 0 auto 34px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.student-management-heading {
+  min-width: 0;
+}
+
+.student-back-button {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #6e6658;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.student-back-button:hover {
+  color: #c9a24b;
+  transform: translateX(-3px);
+}
+
+.student-page-overline {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #b38b38;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.student-management-heading h1 {
+  margin: 0;
+
+  color: #0a1024;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 600;
+
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.student-management-heading p {
+  max-width: 620px;
+
+  margin: 15px 0 0;
+
+  color: #70695d;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.student-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.student-dashboard-button,
+.student-logout-button {
+  min-height: 46px;
+
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.student-dashboard-button {
+  border: 1px solid #c9a24b;
+  background: #0a1024;
+  color: #f5efe0;
+}
+
+.student-dashboard-button:hover {
+  background: #c9a24b;
+  color: #0a1024;
+  transform: translateY(-1px);
+}
+
+.student-logout-button {
+  border: 1px solid #d2cab9;
+  background: transparent;
+  color: #514c44;
+}
+
+.student-logout-button:hover {
+  border-color: #0a1024;
+  background: #0a1024;
+  color: #ffffff;
+}
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.student-stat-grid {
+  max-width: 1500px;
+  margin: 0 auto 28px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.student-stat-card {
+  position: relative;
+
+  min-height: 130px;
+  box-sizing: border-box;
+
+  padding: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(10, 16, 36, 0.08);
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(10, 16, 36, 0.05);
+}
+
+.student-stat-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #c9a24b;
+}
+
+.student-stat-card span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #756e61;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.student-stat-card strong {
+  display: block;
+
+  color: #0a1024;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+.student-stat-card:nth-child(2) strong {
+  color: #286532;
+}
+
+.student-stat-card:nth-child(3) strong {
+  color: #a57616;
+}
+
+.student-stat-card:nth-child(4) strong {
+  color: #756e61;
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.student-management-card {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(10, 16, 36, 0.08);
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 35px rgba(10, 16, 36, 0.06);
+}
+
+.student-management-card-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 28px 30px 24px;
+
+  border-bottom: 1px solid #ebe6da;
+}
+
+.student-section-overline {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #b38b38;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.student-management-card-header h2 {
+  margin: 0;
+
+  color: #0a1024;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+.student-record-count {
+  flex-shrink: 0;
+
+  color: #8b8478;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.student-filters {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 1fr)
+    190px
+    auto;
+
+  align-items: end;
+
+  gap: 12px;
+
+  padding: 20px 30px;
+
+  background: #faf8f2;
+
+  border-bottom: 1px solid #ebe6da;
+}
+
+.student-search-wrapper,
+.student-status-filter {
+  min-width: 0;
+}
+
+.student-search-wrapper label,
+.student-status-filter label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #777064;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.student-search-wrapper input,
+.student-status-filter select {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid #d9d2c3;
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #0a1024;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.student-search-wrapper input::placeholder {
+  color: #a29a8c;
+}
+
+.student-search-wrapper input:focus,
+.student-status-filter select:focus {
+  border-color: #c9a24b;
+
+  box-shadow:
+    0 0 0 3px rgba(201, 162, 75, 0.12);
+}
+
+.student-clear-button {
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: 1px solid #d2cab9;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #6c665b;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-clear-button:hover {
+  border-color: #0a1024;
+  background: #0a1024;
+  color: #ffffff;
+}
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.student-management-error,
+.student-management-success {
+  margin: 20px 30px;
+
+  padding: 13px 15px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.student-management-error {
+  border: 1px solid #e0b7b7;
+  background: #fff0f0;
+  color: #8b2e2e;
+}
+
+.student-management-success {
+  border: 1px solid #b8d8bb;
+  background: #eef8ef;
+  color: #286532;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.student-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.student-table {
+  width: 100%;
+  min-width: 950px;
+
+  border-collapse: collapse;
+}
+
+.student-table th {
+  padding: 15px 18px;
+
+  border-bottom: 1px solid #ded8ca;
+
+  background: #f7f4ec;
+
+  color: #777064;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.student-table td {
+  padding: 17px 18px;
+
+  border-bottom: 1px solid #eeeae1;
+
+  color: #4e4a42;
+
+  font-size: 11px;
+
+  vertical-align: middle;
+}
+
+.student-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.student-table tbody tr:hover {
+  background: #fcfaf5;
+}
+
+.student-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.student-matric {
+  color: #0a1024;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   STUDENT NAME
+   ========================================================= */
+
+.student-name-cell {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 210px;
+}
+
+.student-avatar {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #0a1024;
+  color: #c9a24b;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.student-name-cell strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #0a1024;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.student-name-cell span {
+  display: block;
+
+  color: #999284;
+
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.student-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 72px;
+  min-height: 26px;
+
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.student-status-badge.active {
+  background: #e8f4e9;
+  color: #286532;
+}
+
+.student-status-badge.suspended {
+  background: #fff4dc;
+  color: #936713;
+}
+
+.student-status-badge.inactive {
+  background: #eeeeee;
+  color: #6e6e6e;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.student-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
+}
+
+.student-actions button {
+  min-height: 32px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d4cdbf;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #575248;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-view-action:hover {
+  border-color: #c9a24b;
+  background: #fff9eb;
+  color: #8d6818;
+}
+
+.student-edit-action:hover {
+  border-color: #0a1024;
+  background: #0a1024;
+  color: #ffffff;
+}
+
+.student-status-action:hover {
+  border-color: #b38b38;
+  background: #c9a24b;
+  color: #0a1024;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.student-loading-state {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  color: #80796d;
+}
+
+.student-loading-spinner {
+  width: 34px;
+  height: 34px;
+
+  border: 3px solid #ddd6c8;
+  border-top-color: #c9a24b;
+
+  border-radius: 50%;
+
+  animation: studentSpin 0.8s linear infinite;
+}
+
+@keyframes studentSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.student-loading-state p {
+  margin: 0;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.student-empty-state {
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
+
+  text-align: center;
+}
+
+.student-empty-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  background: #0a1024;
+  color: #c9a24b;
+
+  font-size: 25px;
+}
+
+.student-empty-state h3 {
+  margin: 0 0 7px;
+
+  color: #0a1024;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.student-empty-state p {
+  max-width: 430px;
+
+  margin: 0 0 20px;
+
+  color: #8a8377;
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.student-empty-clear-button {
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid #c9a24b;
+  border-radius: 7px;
+
+  background: #0a1024;
+  color: #f5efe0;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-empty-clear-button:hover {
+  background: #c9a24b;
+  color: #0a1024;
+}
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.student-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  padding: 20px 30px;
+
+  border-top: 1px solid #ebe6da;
+
+  background: #faf8f2;
+}
+
+.student-pagination button {
+  min-height: 36px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d3ccbe;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #514c44;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.student-pagination button:hover:not(:disabled) {
+  border-color: #c9a24b;
+  background: #fff9eb;
+  color: #8c6819;
+}
+
+.student-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.student-pagination span {
+  color: #7c7569;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.student-pagination span strong {
+  color: #0a1024;
+}
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.student-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background: rgba(10, 16, 36, 0.78);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  overflow-y: auto;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.student-modal {
+  width: min(720px, 100%);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  border-radius: 18px;
+
+  background: #f5efe0;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  animation: studentModalIn 0.2s ease-out;
+}
+
+@keyframes studentModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.student-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 30px;
+
+  background: #0a1024;
+
+  color: #f5efe0;
+
+  border-bottom: 1px solid rgba(201, 162, 75, 0.3);
+}
+
+.student-modal-header span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #c9a24b;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.student-modal-header h2 {
+  margin: 0;
+
+  color: #f5efe0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+
+  line-height: 1.1;
+}
+
+.student-modal-header p {
+  margin: 8px 0 0;
+
+  color: rgba(245, 239, 224, 0.7);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.student-modal-close {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #f5efe0;
+
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.student-modal-close:hover:not(:disabled) {
+  border-color: #c9a24b;
+  background: #c9a24b;
+  color: #0a1024;
+}
+
+.student-modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   VIEW DETAILS
+   ========================================================= */
+
+.student-detail-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  background: #ddd5c4;
+}
+
+.student-detail-grid > div {
+  min-width: 0;
+
+  padding: 20px;
+
+  background: #f5efe0;
+}
+
+.student-detail-grid span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #8a8375;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.student-detail-grid strong {
+  display: block;
+
+  overflow-wrap: anywhere;
+
+  color: #0a1024;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.student-detail-full {
+  grid-column: 1 / -1;
+}
+
+.student-view-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  padding: 22px 28px 28px;
+}
+
+/* =========================================================
+   EDIT IDENTITY
+   ========================================================= */
+
+.student-edit-identity {
+  margin: 0 28px;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(201, 162, 75, 0.25);
+  border-radius: 12px;
+
+  background: rgba(201, 162, 75, 0.07);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.student-edit-identity span {
+  margin: 0;
+
+  color: #9a7a35;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.student-edit-identity strong {
+  color: #0a1024;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 1.3rem;
+}
+
+.student-edit-identity small {
+  color: #77715f;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   EDIT FORM
+   ========================================================= */
+
+.student-edit-form {
+  padding: 28px;
+}
+
+.student-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.student-form-field {
+  min-width: 0;
+}
+
+.student-form-full {
+  grid-column: 1 / -1;
+}
+
+.student-form-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #0a1024;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.student-form-field input,
+.student-form-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8d0bd;
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #0a1024;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.student-form-field input {
+  min-height: 46px;
+
+  padding: 0 13px;
+}
+
+.student-form-field textarea {
+  min-height: 105px;
+
+  padding: 12px 13px;
+
+  resize: vertical;
+}
+
+.student-form-field input::placeholder,
+.student-form-field textarea::placeholder {
+  color: #9b968b;
+}
+
+.student-form-field input:focus,
+.student-form-field textarea:focus {
+  border-color: #c9a24b;
+
+  box-shadow:
+    0 0 0 3px rgba(201, 162, 75, 0.14);
+}
+
+.student-form-field input:disabled,
+.student-form-field textarea:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   FORM MESSAGES
+   ========================================================= */
+
+.student-form-error,
+.student-form-success {
+  margin-bottom: 18px;
+
+  padding: 12px 14px;
+
+  border-radius: 8px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.student-form-error {
+  border: 1px solid #e0b7b7;
+
+  background: #fff0f0;
+
+  color: #8b2e2e;
+}
+
+.student-form-success {
+  border: 1px solid #b8d8bb;
+
+  background: #eef8ef;
+
+  color: #286532;
+}
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.student-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  padding-top: 24px;
+}
+
+.student-modal-cancel,
+.student-modal-submit {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 8px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-modal-cancel {
+  border: 1px solid #c8c0af;
+
+  background: transparent;
+
+  color: #4d4a43;
+}
+
+.student-modal-cancel:hover:not(:disabled) {
+  background: #e8e1d2;
+}
+
+.student-modal-submit {
+  border: 1px solid #c9a24b;
+
+  background: #0a1024;
+
+  color: #f5efe0;
+}
+
+.student-modal-submit:hover:not(:disabled) {
+  background: #c9a24b;
+
+  color: #0a1024;
+
+  transform: translateY(-1px);
+}
+
+.student-modal-submit:disabled,
+.student-modal-cancel:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .student-management-page {
+    padding: 32px;
+  }
+
+  .student-stat-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .student-management-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .student-header-actions {
+    width: 100%;
+  }
+
+  .student-dashboard-button,
+  .student-logout-button {
+    flex: 1;
+  }
+
+  .student-filters {
+    grid-template-columns:
+      minmax(0, 1fr)
+      180px;
+  }
+
+  .student-clear-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .student-management-page {
+    padding: 24px 18px;
+  }
+
+  .student-management-heading h1 {
+    font-size: 48px;
+  }
+
+  .student-management-heading p {
+    font-size: 12px;
+  }
+
+  .student-header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .student-dashboard-button,
+  .student-logout-button {
+    width: 100%;
+  }
+
+  .student-stat-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+  }
+
+  .student-stat-card {
+    min-height: 110px;
+
+    padding: 18px;
+  }
+
+  .student-stat-card strong {
+    font-size: 32px;
+  }
+
+  .student-management-card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 23px 20px;
+  }
+
+  .student-management-card-header h2 {
+    font-size: 30px;
+  }
+
+  .student-filters {
+    grid-template-columns: 1fr;
+
+    padding: 18px 20px;
+  }
+
+  .student-search-wrapper input,
+  .student-status-filter select,
+  .student-clear-button {
+    width: 100%;
+  }
+
+  .student-management-error,
+  .student-management-success {
+    margin: 18px 20px;
+  }
+
+  .student-pagination {
+    padding: 18px 20px;
+
+    gap: 10px;
+  }
+
+  .student-pagination span {
+    font-size: 9px;
+  }
+
+  .student-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-detail-full {
+    grid-column: auto;
+  }
+
+  .student-edit-identity {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .student-edit-form {
+    padding: 20px;
+  }
+
+  .student-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-form-full {
+    grid-column: auto;
+  }
+
+  .student-view-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .student-management-page {
+    padding: 20px 12px;
+  }
+
+  .student-page-overline {
+    font-size: 8px;
+  }
+
+  .student-management-heading h1 {
+    font-size: 40px;
+  }
+
+  .student-management-heading p {
+    margin-top: 12px;
+
+    font-size: 11px;
+  }
+
+  .student-stat-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .student-stat-card {
+    min-height: 100px;
+  }
+
+  .student-stat-card strong {
+    font-size: 30px;
+  }
+
+  .student-management-card {
+    border-radius: 10px;
+  }
+
+  .student-management-card-header {
+    padding: 20px 16px;
+  }
+
+  .student-management-card-header h2 {
+    font-size: 27px;
+  }
+
+  .student-filters {
+    padding: 16px;
+  }
+
+  .student-empty-state {
+    min-height: 280px;
+
+    padding: 25px 18px;
+  }
+
+  .student-empty-state h3 {
+    font-size: 25px;
+  }
+
+  .student-modal-overlay {
+    align-items: flex-start;
+
+    padding: 8px;
+  }
+
+  .student-modal {
+    margin: 20px 0;
+
+    border-radius: 14px;
+  }
+
+  .student-modal-header {
+    padding: 20px;
+  }
+
+  .student-modal-header h2 {
+    font-size: 27px;
+  }
+
+  .student-edit-form {
+    padding: 18px;
+  }
+
+  .student-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-view-footer {
+    padding: 20px;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .student-view-footer button {
+    width: 100%;
+  }
+
+  .student-modal-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .student-modal-cancel,
+  .student-modal-submit {
+    width: 100%;
+  }
+
+  .student-edit-identity {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

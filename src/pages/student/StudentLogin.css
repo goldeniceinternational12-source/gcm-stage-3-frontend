@@ -1,0 +1,724 @@
+/* =========================================================
+   GCM STUDENT LOGIN
+   PREMIUM GOLD LOGIN PAGE
+   ========================================================= */
+
+:root {
+  --student-gold-dark: #8a641d;
+  --student-gold: #c9a24b;
+  --student-gold-light: #f2d98b;
+  --student-gold-pale: #fff7df;
+
+  --student-navy: #07101f;
+  --student-navy-light: #101b31;
+
+  --student-text: #f5efe0;
+  --student-muted: #a9afbc;
+
+  --student-border: rgba(201, 162, 75, 0.28);
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.student-login-page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 239, 174, 0.65),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(119, 79, 12, 0.35),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(104, 70, 10, 0.28),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #9a701f 0%,
+      #c9a24b 28%,
+      #e4c66f 50%,
+      #c39a42 72%,
+      #8c651d 100%
+    );
+}
+
+
+/* =========================================================
+   GOLD BACKGROUND LIGHTING
+   ========================================================= */
+
+.student-login-page::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.12) 38%,
+      transparent 52%
+    );
+}
+
+
+.student-login-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 800px;
+  height: 800px;
+
+  top: -500px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 247, 223, 0.16);
+
+  box-shadow:
+    0 0 100px rgba(255, 247, 223, 0.08),
+    inset 0 0 100px rgba(255, 247, 223, 0.05);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+   ========================================================= */
+
+.student-login-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+.student-login-glow-one {
+  width: 300px;
+  height: 300px;
+
+  top: -100px;
+  left: -100px;
+
+  background: rgba(255, 239, 174, 0.28);
+}
+
+.student-login-glow-two {
+  width: 350px;
+  height: 350px;
+
+  right: -120px;
+  bottom: -120px;
+
+  background: rgba(84, 53, 7, 0.22);
+}
+
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.student-login-card {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 530px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 247, 223, 0.28);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 16, 32, 0.98),
+      rgba(12, 23, 43, 0.97)
+    );
+
+  box-shadow:
+    0 35px 90px rgba(50, 31, 3, 0.38),
+    0 10px 35px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(18px);
+}
+
+
+/* Gold top line */
+
+.student-login-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--student-gold-light),
+      var(--student-gold),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.student-login-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 30px 32px;
+
+  border-bottom:
+    1px solid rgba(201, 162, 75, 0.13);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(201, 162, 75, 0.07),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.student-login-logo-wrapper {
+  flex: 0 0 auto;
+
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(201, 162, 75, 0.42);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 162, 75, 0.14),
+      rgba(5, 12, 25, 0.95)
+    );
+
+  box-shadow:
+    0 0 30px rgba(201, 162, 75, 0.08),
+    inset 0 0 20px rgba(201, 162, 75, 0.05);
+}
+
+.student-login-logo {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.student-login-brand-text {
+  min-width: 0;
+}
+
+.student-login-brand-text h1 {
+  margin: 0 0 6px;
+
+  color: var(--student-text);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 23px;
+
+  font-weight: 400;
+
+  line-height: 1.2;
+}
+
+.student-login-brand-text p {
+  margin: 0;
+
+  color: var(--student-gold-light);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.student-login-content {
+  padding: 38px 38px 30px;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.student-login-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--student-gold-light);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.8px;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.student-login-content h2 {
+  margin: 0 0 12px;
+
+  color: var(--student-text);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 40px;
+
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.student-login-intro {
+  margin: 0 0 30px;
+
+  color: var(--student-muted);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FORM FIELD
+   ========================================================= */
+
+.student-login-field {
+  margin-bottom: 20px;
+}
+
+.student-login-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #e6e0d2;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+}
+
+.student-login-field input {
+  width: 100%;
+
+  height: 54px;
+
+  padding: 0 16px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  color: var(--student-text);
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.student-login-field input::placeholder {
+  color: #707789;
+}
+
+.student-login-field input:hover {
+  border-color:
+    rgba(201, 162, 75, 0.25);
+}
+
+.student-login-field input:focus {
+  border-color:
+    rgba(201, 162, 75, 0.75);
+
+  background:
+    rgba(201, 162, 75, 0.055);
+
+  box-shadow:
+    0 0 0 3px rgba(201, 162, 75, 0.08);
+}
+
+.student-login-field input:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+   ========================================================= */
+
+.student-login-forgot-wrapper {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: -5px;
+
+  margin-bottom: 20px;
+}
+
+.student-login-forgot {
+  color: var(--student-gold-light);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+.student-login-forgot:hover {
+  color: #fff5ce;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.student-login-error {
+  margin-bottom: 18px;
+
+  padding: 12px 14px;
+
+  border:
+    1px solid rgba(239, 106, 106, 0.35);
+
+  border-radius: 9px;
+
+  background:
+    rgba(145, 29, 29, 0.16);
+
+  color: #ffb5b5;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SIGN IN BUTTON
+   ========================================================= */
+
+.student-login-button {
+  width: 100%;
+
+  height: 55px;
+
+  border: 1px solid
+    rgba(255, 235, 168, 0.65);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d6b45c,
+      #b88b2e
+    );
+
+  color: #101a2a;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.student-login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.3);
+}
+
+.student-login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.student-login-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+   ========================================================= */
+
+.student-login-info {
+  margin-top: 26px;
+
+  padding: 18px;
+
+  border:
+    1px solid rgba(201, 162, 75, 0.15);
+
+  border-radius: 12px;
+
+  background:
+    rgba(201, 162, 75, 0.045);
+}
+
+.student-login-info strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--student-gold-light);
+
+  font-size: 12px;
+
+  letter-spacing: 0.4px;
+}
+
+.student-login-info p {
+  margin: 0;
+
+  color: #858c9c;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.student-login-footer {
+  padding: 18px 30px 22px;
+
+  border-top:
+    1px solid rgba(201, 162, 75, 0.11);
+
+  color: #697184;
+
+  font-size: 10px;
+
+  text-align: center;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .student-login-page {
+    padding: 30px 15px;
+  }
+
+  .student-login-card {
+    border-radius: 19px;
+  }
+
+  .student-login-brand {
+    padding: 24px;
+
+    gap: 14px;
+  }
+
+  .student-login-logo-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .student-login-logo {
+    width: 43px;
+    height: 43px;
+  }
+
+  .student-login-brand-text h1 {
+    font-size: 18px;
+  }
+
+  .student-login-brand-text p {
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .student-login-content {
+    padding: 30px 24px 25px;
+  }
+
+  .student-login-content h2 {
+    font-size: 34px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .student-login-page {
+    padding: 20px 12px;
+  }
+
+  .student-login-brand {
+    display: block;
+
+    text-align: center;
+  }
+
+  .student-login-logo-wrapper {
+    margin: 0 auto 15px;
+  }
+
+  .student-login-content {
+    padding: 26px 20px 22px;
+  }
+
+  .student-login-content h2 {
+    font-size: 30px;
+  }
+
+  .student-login-intro {
+    font-size: 13px;
+  }
+
+}
+
